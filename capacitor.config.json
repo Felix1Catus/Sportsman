@@ -1,0 +1,8 @@
+{
+  "appId": "com.zizo.sportsman",
+  "appName": "Sportsman",
+  "webDir": "www",
+  "backgroundColor": "#0b0d10",
+  "android": { "allowMixedContent": false },
+  "plugins": { "LocalNotifications": { "smallIcon": "ic_stat_icon_config_sample", "iconColor": "#C6FF3D" } }
+}
