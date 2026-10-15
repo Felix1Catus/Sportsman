@@ -2,6 +2,8 @@ name: Build Sportsman APK
 on:
   push: { branches: [main, master] }
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   apk:
     runs-on: ubuntu-latest
@@ -24,3 +26,8 @@ jobs:
         with:
           name: Sportsman-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: Sportsman APK #${{ github.run_number }}
+          files: android/app/build/outputs/apk/debug/app-debug.apk
